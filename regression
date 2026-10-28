@@ -1,0 +1,7 @@
+library(foreign)
+library(MASS)
+data <- read.csv("binary.csv")
+model <- glm(admit ~ gre + gpa + rank,
+data=data, family=binomial)
+summary(model)
+anova(model, test="Chisq")
