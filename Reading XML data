@@ -1,0 +1,4 @@
+xml(Download files from web or ask chatgpt)
+library(XML)
+data <- xmlParse("C:/Users/Manasa/Desktop/data.xml")
+print(data)
