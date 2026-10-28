@@ -1,0 +1,21 @@
+file <- "C:\\Users\\ADMIN\\Downloads\\students.csv"
+if (grepl(".csv", file)) {
+print("File type: CSV")
+data <- read.csv(file)
+}
+else if (grepl(".txt", file)) {
+print("File type: TXT")
+data <- read.table(file)
+}
+else if (grepl(".xlsx", file)) {
+print("File type: XLSX")
+library(readxl)
+data <- read_excel(file)
+}
+else if (grepl(".xml", file)) {
+print("File type: XML")
+library(XML)
+data <- xmlParse(file)
+}
+
+print(data)
