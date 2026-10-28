@@ -1,39 +1,13 @@
 library(foreign)
 library(MASS)
+
 data <- read.csv("binary.csv")
-model <- glm(admit ~ gre + gpa + rank,
-data=data, family=binomial)
-summary(model)
-anova(model, test="Chisq")
 
-
-# Install packages only once
-# install.packages("foreign")
-# install.packages("MASS")
-
-require(foreign)
-require(MASS)
-
-# Import data from web
-url <- "https://stats.idre.ucla.edu/stat/data/binary.csv"
-data <- read.csv(url)
-
-# Display dataset
-print(head(data))
-
-# Convert rank into a categorical variable
 data$rank <- as.factor(data$rank)
 
-# Apply logistic regression
 model <- glm(admit ~ gre + gpa + rank,
-             data = data, family = binomial)
+             data=data, family=binomial)
 
-# Display model results
 summary(model)
 
-# Check model fit
-print(AIC(model))
-
-# Predict admission probabilities
-pred <- predict(model, type = "response")
-print(head(pred))
+anova(model, test="Chisq")
