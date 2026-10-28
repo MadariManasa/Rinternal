@@ -29,7 +29,70 @@ main="Bar Chart")
 
   Pie Chart
 x <- c(20,30,50)
-
 pie(x,
 labels=c("A","B","C"),
 main="Pie Chart")
+
+Find data distributions using box plot and scatter plot
+# Sample data
+x <- c(10, 20, 30, 40, 50)
+y <- c(15, 25, 35, 45, 55)
+
+# Box plot
+boxplot(x, main = "Box Plot", col = "lightblue")
+
+# Scatter plot
+plot(x, y, main = "Scatter Plot",
+     xlab = "X Values", ylab = "Y Values",
+     col = "red", pch = 19)
+
+
+Explanation:
+- boxplot() displays the data distribution.
+- plot() displays the relationship between two variables.
+- pch = 19 represents solid dots.
+
+b) Find outliers using plot
+# Sample data with an outlier
+x <- c(10, 12, 15, 18, 20, 22, 100)
+
+# Box plot
+boxplot(x, main = "Outlier Detection", col = "lightgreen")
+
+# Find outliers
+outliers <- boxplot.stats(x)$out
+print(outliers)
+
+
+Output:
+[1] 100
+
+
+Explanation: The box plot identifies outliers as points beyond the whiskers. boxplot.stats(x)$out returns the detected outlier values.
+c) Plot histogram, bar chart and pie chart on sample data
+
+1. Histogram
+x <- c(10, 20, 20, 30, 30, 30, 40, 50)
+
+hist(x, main = "Histogram",
+     xlab = "Values", col = "lightblue")
+
+
+2. Bar chart
+marks <- c(80, 90, 70)
+names(marks) <- c("A", "B", "C")
+
+barplot(marks, main = "Bar Chart",
+        xlab = "Students", ylab = "Marks",
+        col = "orange")
+
+
+3. Pie chart
+values <- c(30, 40, 20, 10)
+labels <- c("A", "B", "C", "D")
+
+pie(values, labels = labels,
+    main = "Pie Chart",
+    col = rainbow(4))
+
+
