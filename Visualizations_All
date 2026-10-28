@@ -1,0 +1,35 @@
+4. Visualizations
+  Use the built-in iris dataset.
+data(iris)
+  4(a) Box Plot
+boxplot(iris$Sepal.Length,
+main="Box Plot")
+Scatter Plot
+plot(iris$Sepal.Length,
+iris$Petal.Length,
+main="Scatter Plot")
+
+  4b. otlier
+boxplot(iris$Sepal.Length,
+main="Outliers")
+
+  actual
+boxplot.stats(iris$Sepal.Length)$out
+
+  histogram
+hist(iris$Sepal.Length,
+main="Histogram")
+
+  barchart
+x <- c(20,30,40)
+
+barplot(x,
+names.arg=c("A","B","C"),
+main="Bar Chart")
+
+  Pie Chart
+x <- c(20,30,50)
+
+pie(x,
+labels=c("A","B","C"),
+main="Pie Chart")
