@@ -1,0 +1,28 @@
+data(iris)
+model <- lm(Sepal.Length ~ Petal.Length + Petal.Width,
+data=iris)
+predict(model,
+data.frame(Petal.Length=5,
+Petal.Width=1.5))
+
+# Create sample dataset
+data <- data.frame(
+  hours = c(2, 3, 4, 5, 6),
+  attendance = c(60, 70, 75, 80, 90),
+  marks = c(40, 50, 60, 70, 85)
+)
+
+# Build model
+model <- lm(marks ~ hours + attendance, data = data)
+
+# New data for prediction
+newdata <- data.frame(
+  hours = 7,
+  attendance = 95
+)
+
+# Predict marks
+result <- predict(model, newdata)
+
+# Display prediction
+print(result)
