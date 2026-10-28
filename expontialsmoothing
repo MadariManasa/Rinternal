@@ -1,0 +1,30 @@
+install.packages("forecast")
+library(forecast)
+
+data <- AirPassengers
+
+model <- HoltWinters(data)
+forecast(model, h=12) |> plot()
+
+
+# Install package (only once)
+# install.packages("forecast")
+
+library(forecast)
+
+# Create time series
+data <- ts(c(100, 120, 130, 125, 140, 150,
+             160, 155, 170, 180, 190, 200),
+           start = 2025, frequency = 12)
+
+# Apply exponential smoothing
+model <- HoltWinters(data, beta = FALSE, gamma = FALSE)
+
+# Forecast next 3 periods
+result <- forecast(model, h = 3)
+
+# Display forecast
+print(result)
+
+# Plot forecast
+plot(result, main = "Exponential Smoothing Forecast")
