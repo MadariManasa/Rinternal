@@ -1,0 +1,54 @@
+library(class)
+data(iris)
+train <- iris[1:120,]
+test <- iris[121:150,]
+model <- knn(train[,1:4], test[,1:4],
+train$Species, k=3)
+print(model)
+
+
+# Load packages
+library(class)
+library(rpart)
+library(e1071)
+
+# Load dataset
+data(iris)
+
+# Split dataset into training and testing data
+set.seed(123)
+index <- sample(1:nrow(iris), 105)
+
+train <- iris[index, ]
+test <- iris[-index, ]
+
+# KNN Classifier
+knn_pred <- knn(
+  train[, 1:4],
+  test[, 1:4],
+  train$Species,
+  k = 3
+)
+
+# Decision Tree Classifier
+tree <- rpart(Species ~ ., data = train, method = "class")
+tree_pred <- predict(tree, test, type = "class")
+
+# Naive Bayes Classifier
+nb <- naiveBayes(Species ~ ., data = train)
+nb_pred <- predict(nb, test)
+
+# Evaluate performance using accuracy
+knn_acc <- mean(knn_pred == test$Species)
+tree_acc <- mean(tree_pred == test$Species)
+nb_acc <- mean(nb_pred == test$Species)
+
+# Display accuracy
+print(knn_acc)
+print(tree_acc)
+print(nb_acc)
+
+# Confusion matrix
+print(table(Actual = test$Species, Predicted = knn_pred))
+print(table(Actual = test$Species, Predicted = tree_pred))
+print(table(Actual = test$Species, Predicted = nb_pred))
