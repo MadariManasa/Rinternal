@@ -1,0 +1,11 @@
+# Install packages (run only once)
+install.packages("class")
+install.packages("rpart")
+install.packages("e1071")
+
+# Load packages
+library(class)
+library(rpart)
+library(e1071)
+
+print("Packages loaded successfully")
