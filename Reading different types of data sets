@@ -7,3 +7,31 @@ csv_disk <- "C:\\Users\\ADMIN\\Downloads\\customers-100.csv"
 csv_data <- read.csv(csv_disk)
 print("CSV data read from disk:")
 print(csv_data)
+
+
+
+Reading a CSV file from disk
+data <- read.csv("D:/data.csv")
+print(data)
+
+Reading a TXT file from disk
+data <- read.table("D:/data.txt", header = TRUE)
+print(data)
+
+Reading a CSV file from the web
+url <- "https://example.com/data.csv"
+data <- read.csv(url)
+print(data)
+
+Reading a TXT file from the web
+url <- "https://example.com/data.txt"
+data <- read.table(url, header = TRUE)
+print(data) 
+
+Writing data to a specific disk location
+data <- data.frame(
+  Name = c("A", "B", "C"),
+  Marks = c(80, 90, 70)
+)
+write.csv(data, "D:/output.csv", row.names = FALSE)
+write.table(data, "D:/output.txt", row.names = FALSE)
