@@ -1,0 +1,9 @@
+data <- read.table("C:\\Users\\ADMIN\\Desktop\\Calculator.csv.txt",
+header=TRUE)
+print(data)
+
+ # from disk
+csv_disk <- "C:\\Users\\ADMIN\\Downloads\\customers-100.csv"
+csv_data <- read.csv(csv_disk)
+print("CSV data read from disk:")
+print(csv_data)
