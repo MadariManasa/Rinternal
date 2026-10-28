@@ -1,0 +1,19 @@
+data(AirPassengers)
+plot(AirPassengers,
+main="Air Passengers",
+xlab="Year",
+ylab="Passengers")
+
+
+# Create time series data
+data <- ts(c(100, 120, 130, 125, 140, 150,
+             160, 155, 170, 180, 190, 200),
+           start = 2025, frequency = 12)
+
+# Plot time series
+plot(data,
+     main = "Time Series Plot",
+     xlab = "Year",
+     ylab = "Values",
+     col = "blue",
+     type = "o")
