@@ -1,0 +1,5 @@
+data(iris)
+model <- lm(Sepal.Length ~ Petal.Length,
+data=iris)
+summary(model)
+predict(model, data.frame(Petal.Length=5))
