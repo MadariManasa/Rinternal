@@ -2,3 +2,22 @@ xml(Download files from web or ask chatgpt)
 library(XML)
 data <- xmlParse("C:/Users/Manasa/Desktop/data.xml")
 print(data)
+
+
+Reading an XML dataset in R
+First, install and load the XML package.
+install.packages("XML")
+library(XML)
+
+# Read XML file
+data <- xmlParse("D:/data.xml")
+
+# Display XML data
+print(data)
+
+
+To read XML from the web:
+url <- "https://example.com/data.xml"
+
+data <- xmlParse(url)
+print(data)
