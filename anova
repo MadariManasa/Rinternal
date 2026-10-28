@@ -1,0 +1,4 @@
+model <- aov(Sepal.Length ~ Species,
+             data=iris)
+
+summary(model)
