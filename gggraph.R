@@ -12,3 +12,15 @@ title = "Student Marks",
 x = "Name",
 y = "Marks"
 )
+
+
+
+install.packages("igraph")
+library(igraph)
+library(ggraph)
+
+g <- make_ring(5)
+
+ggraph(g, layout = "circle") +
+  geom_edge_link() +
+  geom_node_point()
