@@ -1,0 +1,10 @@
+Easy method using pairs():
+pairs(iris[,1:4],
+      main="Correlation Plot")
+
+Or with corrplot:
+install.packages("corrplot")
+library(corrplot)
+
+corrplot(cor(iris[,1:4]),
+         method="circle")
