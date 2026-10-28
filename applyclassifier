@@ -6,6 +6,11 @@ model <- knn(train[,1:4], test[,1:4],
 train$Species, k=3)
 print(model)
 
+# Accuracy
+accuracy <- mean(model == test$Species)
+print(accuracy)
+
+
 
 # Load packages
 library(class)
