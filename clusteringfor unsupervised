@@ -1,0 +1,18 @@
+data(iris)
+x <- iris[,1:4]
+model <- kmeans(x, centers=3)
+print(model$cluster)
+
+# Load dataset
+data(iris)
+
+# Select numeric columns
+x <- iris[, 1:4]
+
+# Apply K-means clustering
+set.seed(123)
+model <- kmeans(x, centers = 3)
+
+# Display cluster results
+print(model$cluster)
+print(model$centers)
